@@ -6,6 +6,7 @@
       <class name="org.testng.Task2">
         <methods>
           <include name="testcase1"/>
+          <include name="aftertest"/>
           <include name="testBefore"/>
         </methods>
       </class> <!-- org.testng.Task2 -->

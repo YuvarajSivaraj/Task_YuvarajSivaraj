@@ -1,6 +1,7 @@
 package org.pom;
 
 import org.base.BaseClass;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,39 +13,48 @@ public class PomClass2 extends BaseClass{
 	}
 	
 	@FindBy(xpath = "//img[@class='pg-sidebar-wrapper-profile-link-img']")
-	private WebElement icon;
+	 WebElement icon;
 	@FindBy(xpath = "//span[text()='Sign In']")
-	private WebElement signin;
+	 WebElement signin;
 	@FindBy(xpath = "//input[@placeholder='Email']")
-	private WebElement email;
+	 WebElement email;
 	@FindBy(xpath = "//input[@placeholder='Password']")
-	private WebElement password;
+	 WebElement password;
 	@FindBy(xpath = "//div[@class='cr-sign-in-form__button-wrapper']")
-	private WebElement btnsignin;
+	 WebElement btnsignin;
 	@FindBy(xpath = "//span[text()='Orders']")
-	private WebElement Orders;
+	 WebElement Orders;
 	@FindBy(xpath = "//button[@class='pg-history__pagination-next']")
-	private WebElement nxtpgbtn;
-	public WebElement getIcon() {
-		return icon;
+	 WebElement nxtpgbtn;
+	public void getIcon() {
+		btnClick(icon);
 	}
-	public WebElement getSignin() {
-		return signin;
+	public void getSignin() {
+		btnClick(signin);
 	}
-	public WebElement getEmail() {
-		return email;
+	public void getEmail() {
+		fill(email, "keshav@trakx.io");
 	}
-	public WebElement getPassword() {
-		return password;
+	public void getPassword() {
+		fill(password, "Murthykeshav@7");
 	}
-	public WebElement getBtnsignin() {
-		return btnsignin;
+	public void getBtnsignin() {
+		btnClick(btnsignin);
 	}
-	public WebElement getOrders() {
-		return Orders;
+	public void getOrders() {
+		btnClick(Orders);
 	}
-	public WebElement getNxtpgbtn() {
-		return nxtpgbtn;
+	public void getNxtpgbtn() throws InterruptedException {
+		String nxtbtn = driver.findElement(By.xpath("//button[@class='pg-history__pagination-next']")).getAttribute("class");
+		System.out.println(nxtbtn);
+	
+		while(!nxtbtn.contains("disabled"))
+		{
+		 btnClick(nxtpgbtn);
+		Thread.sleep(2000);
+		nxtbtn = driver.findElement(By.xpath("//button[@class='pg-history__pagination-next']")).getAttribute("class");
+	}
+		quit();
 	}
 	
 
