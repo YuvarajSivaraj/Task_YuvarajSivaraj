@@ -1,5 +1,7 @@
 package org.testng;
 
+import java.util.concurrent.TimeUnit;
+
 import org.base.BaseClass;
 import org.pom.PomClass2;
 import org.testng.annotations.AfterMethod;
@@ -14,24 +16,24 @@ public class Task2 extends BaseClass{
 	loadUrl("https://trakx.opendax.app/");
 	maxBrowser();
 	}	
-	@AfterMethod
-	public void aftertest()
-	{
-		quit();
-	}	
+//	@AfterMethod
+////	public void aftertest()
+////	{
+////		quit();
+////	}	
 	@Test
 	public void testcase1() throws InterruptedException
 	{
 		PomClass2 p = new PomClass2();
 		p.getIcon();
 		p.getSignin();
-		Thread.sleep(3000);
+		impwaits(15);
 		p.getEmail();
 		p.getPassword();
 		p.getBtnsignin();
-		Thread.sleep(2000);
+		impwaits(15);
 		p.getOrders();
-		Thread.sleep(2000);
+		impwaits(15);
 		p.getNxtpgbtn();
 		}
 }

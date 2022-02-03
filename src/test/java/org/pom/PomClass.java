@@ -24,7 +24,9 @@ import org.testng.Assert;
 		@FindBy(xpath="//select[@class='product_sort_container']")
 		WebElement filter;
 		@FindBy(xpath = "//div[@class='inventory_item_name']")
-		WebElement itemname;
+		WebElement itemnames;
+		@FindBy(xpath = "//div[@class='inventory_item_name']")
+		WebElement inventryItem;
 		public void getUsername() {
 			fill(username, "standard_user");
 		}
@@ -66,7 +68,7 @@ import org.testng.Assert;
 			{
 				a.getText();
 			}				
-			Collections.sort(bfrfilter);
+			Collections.sort(bfrfilter, Collections.reverseOrder());
 			Assert.assertEquals(bfrfilter, afterfilter);
 			}
 			
@@ -85,7 +87,7 @@ import org.testng.Assert;
 				{
 					afterfilter.add(Double.valueOf(a.getText().replace("$", "")));
 				}				
-				Collections.sort(bfrfilter);
+				Collections.sort(bfrfilter, Collections.reverseOrder());
 				Assert.assertEquals(bfrfilter, afterfilter);
 		}
 				public void lowtohigh() {

@@ -9,8 +9,9 @@ package org.base;
 	import java.io.IOException;
 	import java.text.SimpleDateFormat;
 	import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
-	import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Cell;
 	import org.apache.poi.ss.usermodel.DateUtil;
 	import org.apache.poi.ss.usermodel.Row;
 	import org.apache.poi.ss.usermodel.Sheet;
@@ -18,7 +19,8 @@ package org.base;
 	import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 	import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 	import org.openqa.selenium.Alert;
-	import org.openqa.selenium.Keys;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 	import org.openqa.selenium.Point;
 	import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.WebElement;
@@ -75,4 +77,43 @@ package org.base;
 			Select sl =new Select(element);
 			sl.selectByVisibleText(userText);	
 		}
+		
+		public static void impwaits(int secs)
+		{
+			driver.manage().timeouts().implicitlyWait(secs, TimeUnit.SECONDS);
+				
+		}
+		public static void findElements(String xpath)
+		{
+			driver.findElements(By.xpath(xpath));
+			return;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 }

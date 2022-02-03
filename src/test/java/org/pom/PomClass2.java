@@ -1,5 +1,7 @@
 package org.pom;
 
+import java.util.List;
+
 import org.base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -22,10 +24,11 @@ public class PomClass2 extends BaseClass{
 	 WebElement password;
 	@FindBy(xpath = "//div[@class='cr-sign-in-form__button-wrapper']")
 	 WebElement btnsignin;
-	@FindBy(xpath = "//span[text()='Orders']")
+	@FindBy(xpath = "//*[@id=\'root\']/header/div/div[2]/a[2]/span")
 	 WebElement Orders;
 	@FindBy(xpath = "//button[@class='pg-history__pagination-next']")
 	 WebElement nxtpgbtn;
+	
 	public void getIcon() {
 		btnClick(icon);
 	}
@@ -42,19 +45,18 @@ public class PomClass2 extends BaseClass{
 		btnClick(btnsignin);
 	}
 	public void getOrders() {
-		btnClick(Orders);
+		driver.findElement(By.xpath("//*[@id=\'root\']/header/div/div[2]/a[2]/span")).click();
 	}
-	public void getNxtpgbtn() throws InterruptedException {
-		String nxtbtn = driver.findElement(By.xpath("//button[@class='pg-history__pagination-next']")).getAttribute("class");
-		System.out.println(nxtbtn);
+	public void getNxtpgbtn() {
+		int rowsize = driver.findElements(By.xpath("//*[@id=\'root\']/div[3]/div/div[2]/table/tbody/tr")).size();
+		System.out.println(rowsize);
+		
+		if (rowsize==25) {
+			
+			btnClick(nxtpgbtn);
+			
+		}
 	
-		while(!nxtbtn.contains("disabled"))
-		{
-		 btnClick(nxtpgbtn);
-		Thread.sleep(2000);
-		nxtbtn = driver.findElement(By.xpath("//button[@class='pg-history__pagination-next']")).getAttribute("class");
-	}
-		quit();
 	}
 	
 

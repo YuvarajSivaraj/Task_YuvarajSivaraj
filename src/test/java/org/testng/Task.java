@@ -1,6 +1,5 @@
 package org.testng;
 
-import java.util.concurrent.TimeUnit;
 import org.base.BaseClass;
 import org.pom.PomClass;
 import org.testng.annotations.AfterMethod;
@@ -26,7 +25,7 @@ import org.testng.annotations.Test;
 			p.getUsername();
 			p.getPassword();
 			p.getLoginBtn();
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			impwaits(5);
 			p.atoz();			
 			}		
 		@Test(groups = "Descending")
@@ -35,7 +34,7 @@ import org.testng.annotations.Test;
 			p.getUsername();
 			p.getPassword();
 			p.getLoginBtn();
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			impwaits(5);
 			p.ztoa();			
 			}		
 		@Test(groups = "Price Low to High")
@@ -44,7 +43,7 @@ import org.testng.annotations.Test;
 			p.getUsername();
 			p.getPassword();
 			p.getLoginBtn();
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			impwaits(5);
 			p.lowtohigh();			
 			}		
 		@Test(groups = "Price High to Low")
@@ -53,7 +52,7 @@ import org.testng.annotations.Test;
 			p.getUsername();
 			p.getPassword();
 			p.getLoginBtn();
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			impwaits(5);
 			p.hightolow();			
 			}
 		}
