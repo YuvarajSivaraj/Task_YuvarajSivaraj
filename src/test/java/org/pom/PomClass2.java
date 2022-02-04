@@ -8,56 +8,61 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PomClass2 extends BaseClass{
-	
+public class PomClass2 extends BaseClass {
+
 	public PomClass2() {
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy(xpath = "//img[@class='pg-sidebar-wrapper-profile-link-img']")
-	 WebElement icon;
+	WebElement icon;
 	@FindBy(xpath = "//span[text()='Sign In']")
-	 WebElement signin;
+	WebElement signin;
 	@FindBy(xpath = "//input[@placeholder='Email']")
-	 WebElement email;
+	WebElement email;
 	@FindBy(xpath = "//input[@placeholder='Password']")
-	 WebElement password;
+	WebElement password;
 	@FindBy(xpath = "//div[@class='cr-sign-in-form__button-wrapper']")
-	 WebElement btnsignin;
-	@FindBy(xpath = "//*[@id=\'root\']/header/div/div[2]/a[2]/span")
-	 WebElement Orders;
+	WebElement btnsignin;
 	@FindBy(xpath = "//button[@class='pg-history__pagination-next']")
-	 WebElement nxtpgbtn;
-	
+	WebElement nxtpgbtn;
+	By nextpage = By.xpath("//button[@class='pg-history__pagination-next']");
+	By order = By.xpath("//*[@id='root']/div[1]/div[2]/a[3]/div");
+
 	public void getIcon() {
 		btnClick(icon);
 	}
+
 	public void getSignin() {
 		btnClick(signin);
 	}
+
 	public void getEmail() {
 		fill(email, "keshav@trakx.io");
 	}
+
 	public void getPassword() {
 		fill(password, "Murthykeshav@7");
 	}
+
 	public void getBtnsignin() {
 		btnClick(btnsignin);
 	}
+
 	public void getOrders() {
-		driver.findElement(By.xpath("//*[@id=\'root\']/header/div/div[2]/a[2]/span")).click();
+		driver.findElement(order).click();
 	}
-	public void getNxtpgbtn() {
-		int rowsize = driver.findElements(By.xpath("//*[@id=\'root\']/div[3]/div/div[2]/table/tbody/tr")).size();
-		System.out.println(rowsize);
-		
-		if (rowsize==25) {
-			
+
+	public void getNxtpgbtn() throws InterruptedException {
+		String nxtbtn = driver.findElement(nextpage).getAttribute("class");
+		System.out.println(nxtbtn);
+
+		while (!nxtbtn.contains("disabled")) {
 			btnClick(nxtpgbtn);
-			
+			Thread.sleep(2000);
+			nxtbtn = driver.findElement(nextpage).getAttribute("class");
 		}
-	
+
 	}
-	
 
 }

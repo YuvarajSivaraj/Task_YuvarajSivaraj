@@ -1,21 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-03T13:55:29Z" name="Default suite" finished-at="2022-02-03T13:56:10Z" duration-ms="40753">
+  <suite started-at="2022-02-04T09:31:02Z" name="Default suite" finished-at="2022-02-04T09:31:34Z" duration-ms="31392">
     <groups>
+      <group name="Descending">
+        <method signature="Task.testcase2()[pri:0, instance:org.testng.Task@6d07a63d]" name="testcase2" class="org.testng.Task"/>
+      </group> <!-- Descending -->
+      <group name="Asscending">
+        <method signature="Task.testcase1()[pri:0, instance:org.testng.Task@6d07a63d]" name="testcase1" class="org.testng.Task"/>
+      </group> <!-- Asscending -->
+      <group name="Price High to Low">
+        <method signature="Task.testcase4()[pri:0, instance:org.testng.Task@6d07a63d]" name="testcase4" class="org.testng.Task"/>
+      </group> <!-- Price High to Low -->
+      <group name="Price Low to High">
+        <method signature="Task.testcase3()[pri:0, instance:org.testng.Task@6d07a63d]" name="testcase3" class="org.testng.Task"/>
+      </group> <!-- Price Low to High -->
     </groups>
-    <test started-at="2022-02-03T13:55:29Z" name="Default test" finished-at="2022-02-03T13:56:10Z" duration-ms="40753">
-      <class name="org.testng.Task2">
-        <test-method is-config="true" signature="testBefore()[pri:0, instance:org.testng.Task2@4196c360]" started-at="2022-02-03T13:55:29Z" name="testBefore" finished-at="2022-02-03T13:55:53Z" duration-ms="24188" status="PASS">
+    <test started-at="2022-02-04T09:31:02Z" name="Default test" finished-at="2022-02-04T09:31:34Z" duration-ms="31392">
+      <class name="org.testng.Task">
+        <test-method is-config="true" signature="testBefore()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:02Z" name="testBefore" finished-at="2022-02-04T09:31:10Z" duration-ms="7299" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testBefore -->
-        <test-method signature="testcase1()[pri:0, instance:org.testng.Task2@4196c360]" started-at="2022-02-03T13:55:53Z" name="testcase1" finished-at="2022-02-03T13:56:10Z" duration-ms="16535" status="PASS">
+        <test-method signature="testcase1()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:10Z" name="testcase1" finished-at="2022-02-04T09:31:11Z" duration-ms="1155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase1 -->
-      </class> <!-- org.testng.Task2 -->
+        <test-method is-config="true" signature="aftertest()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:11Z" name="aftertest" finished-at="2022-02-04T09:31:11Z" duration-ms="348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftertest -->
+        <test-method is-config="true" signature="testBefore()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:11Z" name="testBefore" finished-at="2022-02-04T09:31:16Z" duration-ms="4647" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBefore -->
+        <test-method signature="testcase2()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:16Z" name="testcase2" finished-at="2022-02-04T09:31:17Z" duration-ms="712" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testcase2 -->
+        <test-method is-config="true" signature="aftertest()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:17Z" name="aftertest" finished-at="2022-02-04T09:31:17Z" duration-ms="265" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftertest -->
+        <test-method is-config="true" signature="testBefore()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:17Z" name="testBefore" finished-at="2022-02-04T09:31:25Z" duration-ms="8319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBefore -->
+        <test-method signature="testcase3()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:25Z" name="testcase3" finished-at="2022-02-04T09:31:26Z" duration-ms="946" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testcase3 -->
+        <test-method is-config="true" signature="aftertest()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:26Z" name="aftertest" finished-at="2022-02-04T09:31:27Z" duration-ms="701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftertest -->
+        <test-method is-config="true" signature="testBefore()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:27Z" name="testBefore" finished-at="2022-02-04T09:31:33Z" duration-ms="5849" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBefore -->
+        <test-method signature="testcase4()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:33Z" name="testcase4" finished-at="2022-02-04T09:31:34Z" duration-ms="817" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testcase4 -->
+        <test-method is-config="true" signature="aftertest()[pri:0, instance:org.testng.Task@6d07a63d]" started-at="2022-02-04T09:31:34Z" name="aftertest" finished-at="2022-02-04T09:31:34Z" duration-ms="303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftertest -->
+      </class> <!-- org.testng.Task -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

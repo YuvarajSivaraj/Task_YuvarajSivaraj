@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="org.testng.Task2">
         <methods>
           <include name="testcase1"/>
-          <include name="testcase1"/>
+          <include name="aftertest"/>
           <include name="testBefore"/>
         </methods>
       </class> <!-- org.testng.Task2 -->
-      <class name="org.testng.Task">
-        <methods>
-          <include name="testcase1"/>
-          <include name="testcase3"/>
-          <include name="aftertest"/>
-          <include name="testBefore"/>
-          <include name="testcase2"/>
-          <include name="testcase4"/>
-        </methods>
-      </class> <!-- org.testng.Task -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
